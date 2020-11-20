@@ -1,0 +1,25 @@
+.feature-section__row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  margin-bottom: 36px;
+
+  &__img {
+    max-width: 120px;
+    margin-bottom: 48px;
+  }
+
+  &__title {
+    align-self: flex-start;
+    margin-bottom: 16px;
+    font-size: 21px;
+    font-weight: 600;
+  }
+}

@@ -1,0 +1,59 @@
+.header {
+  margin-top: 48px;
+
+  &.margin {
+    margin-bottom: 100px;
+  }
+
+  &__logo-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+}
+.logo {
+  width: 180px;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  padding: 16px;
+
+  &__item {
+    color: $textColor;
+    text-decoration: none;
+
+    &.active {
+      text-decoration: underline;
+    }
+
+    &:hover {
+      color: $textColor;
+      text-decoration: none;
+    }
+
+    &:not(:last-child) {
+      margin-right: 100px;
+    }
+  }
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  background-color: white;
+  z-index: 10;
+}
+
+@media screen and (max-width: 768px) {
+  .nav {
+    justify-content: space-around;
+    & > *:not(:last-child) {
+      margin-right: 0px;
+    }
+  }
+}
