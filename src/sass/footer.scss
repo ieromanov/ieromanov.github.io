@@ -1,0 +1,36 @@
+@import "variables";
+.footer {
+  background-color: $primaryColorBlue;
+  padding: 32px;
+
+  .heading {
+    color: white;
+    margin-bottom: 24px;
+  }
+
+  &__text {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 24px;
+  }
+}
+
+.social {
+  display: flex;
+
+  &__link {
+    &:not(:last-child) {
+      margin-right: 16px;
+    }
+  }
+
+  &__icon {
+    max-width: 60px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .subscribe-form {
+    margin-bottom: 24px;
+  }
+}

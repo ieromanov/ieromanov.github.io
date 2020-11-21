@@ -7,6 +7,7 @@
 @import "header";
 @import "subscribe-section";
 @import "features-section";
+@import "footer";
 
 html {
   scroll-behavior: smooth;
@@ -120,6 +121,12 @@ h4 {
 
 .block-image {
   max-width: 740px;
+  width: 100%;
+}
+
+.image-max-width {
+  width: 100%;
+  max-width: 580px;
 }
 
 @media screen and (max-width: 768px) {
