@@ -14,7 +14,7 @@ html {
 
 body {
   font-family: "Montserrat", sans-serif;
-  font-size: 21px;
+  font-size: 18px;
   line-height: 1.5;
 }
 
@@ -29,27 +29,27 @@ img {
 }
 
 h1 {
-  font-size: 58px;
-  max-width: 540px;
+  font-size: 54px;
+  max-width: 500px;
   line-height: 1;
   margin-bottom: 24px;
 }
 
 h2 {
-  font-size: 64px;
+  font-size: 54px;
   margin-bottom: 14px;
 }
 
 h3 {
-  font-size: 56px;
-  margin-bottom: 32px;
+  font-size: 42px;
+  margin-bottom: 20px;
 }
 
 h4 {
-  font-size: 24px;
+  font-size: 22px;
   text-transform: uppercase;
   color: $secondaryHeadingColor;
-  margin-bottom: 78px;
+  margin-bottom: 52px;
   margin-top: -8px;
 }
 
@@ -63,7 +63,6 @@ h4 {
 
 .question {
   font-family: "Montserrat", sans-serif;
-  font-size: 28px;
   color: $secondaryHeadingColor;
   text-transform: none;
   font-weight: 500;
@@ -83,7 +82,7 @@ h4 {
   width: 100%;
   max-width: 1200px;
   margin: auto;
-  padding: 64px 18px;
+  padding: 48px 18px;
 }
 
 .text-block {
@@ -117,6 +116,14 @@ h4 {
 
 .margin-none {
   margin: 0;
+}
+
+.block-image {
+	max-width: 740px;
+}
+
+.image-max-width {
+	max-width: 530px;
 }
 
 @media screen and (max-width: 768px) {
