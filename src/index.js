@@ -33,8 +33,8 @@ function initScrollListener() {
       let section = document.querySelector(link.hash);
 
       if (
-        section.offsetTop - 100 <= fromTop &&
-        section.offsetTop + section.offsetHeight - 100 > fromTop
+        section.offsetTop - 120 <= fromTop &&
+        section.offsetTop + section.offsetHeight - 120 > fromTop
       ) {
         link.classList.add("active");
       } else {
