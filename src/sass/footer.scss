@@ -30,7 +30,25 @@
 }
 
 @media screen and (max-width: 992px) {
-  .subscribe-form {
-    margin-bottom: 24px;
+  .footer {
+    &__subscribe-form {
+      margin-bottom: 24px;
+    }
+  }
+}
+
+@media screen and (max-width: 1212px) {
+  .footer__subscribe-form {
+    flex-wrap: wrap;
+
+    .subscribe-form__input {
+      margin-bottom: 16px;
+      margin-right: 0;
+    }
+
+    .subscribe-form__input,
+    .subscribe-form__submit {
+      max-width: 80%;
+    }
   }
 }
