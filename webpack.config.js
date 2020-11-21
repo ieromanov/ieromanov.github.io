@@ -18,7 +18,7 @@ if (isDev) {
       chunkFilename: isDev ? "[id].css" : "[id].[hash].css",
     }),
     new CleanWebpackPlugin({
-      cleanAfterEveryBuildPatterns: ["dist"],
+      cleanAfterEveryBuildPatterns: ["docs"],
     }),
     new webpack.HashedModuleIdsPlugin(),
   ];
@@ -29,7 +29,7 @@ module.exports = {
     app: "./src/index.js",
   },
   devServer: {
-    contentBase: "./dist",
+    contentBase: "./docs",
     hot: true,
   },
   devtool: "source-map",
@@ -131,7 +131,7 @@ module.exports = {
   },
   output: {
     filename: "[name].[hash].js",
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "docs"),
     publicPath: "",
   },
 };
