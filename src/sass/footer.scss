@@ -29,6 +29,12 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 32px 0;
+  }
+}
+
 @media screen and (max-width: 992px) {
   .footer {
     &__subscribe-form {
@@ -44,11 +50,6 @@
     .subscribe-form__input {
       margin-bottom: 16px;
       margin-right: 0;
-    }
-
-    .subscribe-form__input,
-    .subscribe-form__submit {
-      max-width: 80%;
     }
   }
 }
