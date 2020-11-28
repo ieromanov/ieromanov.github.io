@@ -5,8 +5,5 @@ export function sendEmail(email) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ email }),
-  }).then((response) => {
-    debugger;
-    return response;
   });
 }
