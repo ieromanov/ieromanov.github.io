@@ -1,6 +1,12 @@
 export function sendEmail(email) {
-  return fetch("/api/signup", {
+  return fetch("https://squareconsulting.net/api/signup/", {
     method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
     body: JSON.stringify({ email }),
+  }).then((response) => {
+    debugger;
+    return response;
   });
 }
