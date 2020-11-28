@@ -1,72 +1,51 @@
 import "./sass/main.scss";
 
-function initScrollListener() {
-  const headerEl = document.querySelector(".header");
-  const navigationEl = document.querySelector("#navigation-js");
-  const navEls = document.querySelectorAll(".nav-item-js");
-  const navigationOffsetTop = navigationEl.offsetTop;
+import { initScrollListener } from "./js/init-scroll-listener";
+import { sendEmail } from "./js/send-email";
+import { validateEmail } from "./js/validate-email";
 
-  function updateProgressBar() {
-    const winScroll =
-      document.body.scrollTop || document.documentElement.scrollTop;
-    const height =
-      document.documentElement.scrollHeight -
-      document.documentElement.clientHeight;
-    const scrolled = (winScroll / height) * 100;
-    document.getElementById("progress-js").style.width = scrolled + "%";
-  }
-
-  function stickyNavigation() {
-    if (window.pageYOffset > navigationOffsetTop) {
-      navigationEl.classList.add("sticky");
-      headerEl.classList.add("margin");
-    } else {
-      navigationEl.classList.remove("sticky");
-      headerEl.classList.remove("margin");
-    }
-  }
-
-  function markActiveSection() {
-    let fromTop = window.scrollY;
-
-    navEls.forEach((link) => {
-      let section = document.querySelector(link.hash);
-
-      if (
-        section.offsetTop - 120 <= fromTop &&
-        section.offsetTop + section.offsetHeight - 120 > fromTop
-      ) {
-        link.classList.add("active");
-      } else {
-        link.classList.remove("active");
-      }
-    });
-  }
-
-  function onScroll() {
-    updateProgressBar();
-    stickyNavigation();
-    markActiveSection();
-  }
-
-  return onScroll;
-}
+import {
+  FORM_CLASS,
+  FORM_INPUT_CLASS,
+  INPUT_VALIDATION_ERROR_CLASS,
+} from "./js/constants";
 
 function subscribeNotify() {
   const notificationEl = document.querySelector("#subscribe-notification-js");
-  return () => {
-    notificationEl.style.opacity = 1;
 
-    setTimeout(() => {
-      notificationEl.style.opacity = 0;
-    }, 2000);
-  };
+  notificationEl.style.opacity = 1;
+
+  setTimeout(() => {
+    notificationEl.style.opacity = 0;
+  }, 2000);
+}
+
+function onFormSubmit(event) {
+  event.preventDefault();
+
+  const form = event.currentTarget;
+  const input = form.querySelector(`.${FORM_INPUT_CLASS}`);
+
+  if (validateEmail(input.value)) {
+    sendEmail(input.value).then(subscribeNotify);
+  } else {
+    input.classList.add(INPUT_VALIDATION_ERROR_CLASS);
+  }
 }
 
 function main() {
-  const buttonEl = document.querySelector("#subscribe-submit-js");
-  buttonEl.addEventListener("click", subscribeNotify());
+  const forms = document.querySelectorAll(`.${FORM_CLASS}`);
+  Array.from(forms).forEach((form) => {
+    form.addEventListener("submit", onFormSubmit);
+  });
   window.addEventListener("scroll", initScrollListener());
+
+  document.addEventListener("input", (event) => {
+    const input = event.target;
+    if (input.classList.contains(INPUT_VALIDATION_ERROR_CLASS)) {
+      input.classList.remove(INPUT_VALIDATION_ERROR_CLASS);
+    }
+  });
 }
 
 window.addEventListener("DOMContentLoaded", main);
