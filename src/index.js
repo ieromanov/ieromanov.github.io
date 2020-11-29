@@ -27,7 +27,10 @@ function onFormSubmit(event) {
   const input = form.querySelector(`.${FORM_INPUT_CLASS}`);
 
   if (validateEmail(input.value)) {
-    sendEmail(input.value).then(subscribeNotify);
+    sendEmail(input.value).then(() => {
+      input.value = "";
+      subscribeNotify();
+    });
   } else {
     input.classList.add(INPUT_VALIDATION_ERROR_CLASS);
   }
