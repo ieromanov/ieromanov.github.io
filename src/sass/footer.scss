@@ -13,6 +13,14 @@
     font-size: 20px;
     margin-bottom: 24px;
   }
+
+  &__subscribe-form .notification {
+    width: auto;
+    white-space: nowrap;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+  }
 }
 
 .social {
@@ -39,6 +47,12 @@
   .footer {
     &__subscribe-form {
       margin-bottom: 24px;
+
+      & .notification {
+        top: -60px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
     }
   }
 }

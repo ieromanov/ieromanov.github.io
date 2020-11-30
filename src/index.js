@@ -3,22 +3,13 @@ import "./sass/main.scss";
 import { initScrollListener } from "./js/init-scroll-listener";
 import { sendEmail } from "./js/send-email";
 import { validateEmail } from "./js/validate-email";
+import { notify } from "./js/notify";
 
 import {
   FORM_CLASS,
   FORM_INPUT_CLASS,
   INPUT_VALIDATION_ERROR_CLASS,
 } from "./js/constants";
-
-function subscribeNotify() {
-  const notificationEl = document.querySelector("#subscribe-notification-js");
-
-  notificationEl.style.opacity = 1;
-
-  setTimeout(() => {
-    notificationEl.style.opacity = 0;
-  }, 2000);
-}
 
 function onFormSubmit(event) {
   event.preventDefault();
@@ -29,7 +20,7 @@ function onFormSubmit(event) {
   if (validateEmail(input.value)) {
     sendEmail(input.value).then(() => {
       input.value = "";
-      subscribeNotify();
+      notify(form);
     });
   } else {
     input.classList.add(INPUT_VALIDATION_ERROR_CLASS);
