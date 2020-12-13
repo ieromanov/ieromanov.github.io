@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163662481-2"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-163662481-2"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-      gtag('config', 'UA-163662481-2');
+      gtag("config", "UA-163662481-2");
     </script>
-    
+
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>Savvyy</title>
@@ -21,13 +25,13 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Quicksand:wght@500;600&display=swap"
       rel="stylesheet"
-      />
-    
+    />
   </head>
 
   <body>
     ${require('./partials/progress-bar.html')}
-    ${require('./partials/header.html')} ${require('./partials/body.html')}
+    ${require('./partials/header.html')}
+    ${require('./partials/navigation.html')} ${require('./partials/body.html')}
     ${require('./partials/subscribe.html')}
 
     <div id="tools">

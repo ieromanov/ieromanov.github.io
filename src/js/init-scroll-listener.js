@@ -2,7 +2,8 @@ export function initScrollListener() {
   const headerEl = document.querySelector(".header");
   const navigationEl = document.querySelector("#navigation-js");
   const navEls = document.querySelectorAll(".nav-item-js");
-  const navigationOffsetTop = navigationEl.offsetTop;
+  const navigationOffsetTop =
+    navigationEl !== null ? navigationEl.offsetTop : 0;
 
   function updateProgressBar() {
     const winScroll =
@@ -43,8 +44,10 @@ export function initScrollListener() {
 
   function onScroll() {
     updateProgressBar();
-    stickyNavigation();
-    markActiveSection();
+    if (navigationEl !== null) {
+      stickyNavigation();
+      markActiveSection();
+    }
   }
 
   return onScroll;

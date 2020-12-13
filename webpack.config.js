@@ -97,8 +97,23 @@ module.exports = {
     new HtmlWebpackPlugin({
       favicon: "src/favicon.ico",
       template: "src/index.html",
+      title: "Savvy",
       inject: "body",
       filename: "index.html",
+    }),
+    new HtmlWebpackPlugin({
+      favicon: "src/favicon.ico",
+      template: "src/privacy_policy.html",
+      title: "Privacy policy",
+      inject: "body",
+      filename: "privacy_policy.html",
+    }),
+    new HtmlWebpackPlugin({
+      favicon: "src/favicon.ico",
+      template: "src/terms_of_service.html",
+      title: "Terms of service",
+      inject: "body",
+      filename: "terms_of_service.html",
     }),
     ...envPlugins,
   ],
