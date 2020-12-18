@@ -31,9 +31,12 @@ img {
 
 h1 {
   font-size: 54px;
-  max-width: 500px;
   line-height: 1;
   margin-bottom: 24px;
+}
+
+.h1-max-width {
+  max-width: 500px;
 }
 
 h2 {
@@ -127,6 +130,10 @@ h4 {
 .image-max-width {
   width: 100%;
   max-width: 580px;
+}
+
+.word-break-all {
+  word-break: break-all;
 }
 
 @media screen and (max-width: 768px) {
