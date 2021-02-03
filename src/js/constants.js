@@ -1,3 +1,5 @@
+import '../assets/badge.png';
+
 export const FORM_CLASS = "subscribe-form";
 
 export const FORM_INPUT_CLASS = "subscribe-form__input";
