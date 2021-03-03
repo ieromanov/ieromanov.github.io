@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Document</title>
+</head>
+<body>
+
+  <button id="first_btn">
+      Sign Up First
+  </button>
+<button id="second_btn">
+    Sign up Second
+</button>
+<script>
+    document.getElementById('first_btn').addEventListener('click', () => {
+        document.cookie = "savvyy_plan=1;secure;path=/;expires=Thu, 17 Oct 2030 14:28:00 GMT";
+        document.location.href = '/';
+    })
+    document.getElementById('second_btn').addEventListener('click', () => {
+        document.cookie = "savvyy_plan=2;secure;path=/;expires=Thu, 17 Oct 2030 14:28:00 GMT";
+        document.location.href = '/';
+    })
+</script>
+</body>
+</html>
